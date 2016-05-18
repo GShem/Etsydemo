@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160516102157) do
+ActiveRecord::Schema.define(version: 20160518172951) do
 
   create_table "listings", force: :cascade do |t|
     t.string   "name"
@@ -48,6 +48,22 @@ ActiveRecord::Schema.define(version: 20160516102157) do
 
   add_index "mode_lrails", ["email"], name: "index_mode_lrails_on_email", unique: true
   add_index "mode_lrails", ["reset_password_token"], name: "index_mode_lrails_on_reset_password_token", unique: true
+
+  create_table "orders", force: :cascade do |t|
+    t.string   "Page"
+    t.string   "address"
+    t.string   "town"
+    t.string   "city"
+    t.string   "postcode"
+    t.string   "email"
+    t.string   "phone"
+    t.string   "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "buyer_id"
+    t.integer  "seller_id"
+    t.integer  "listing_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

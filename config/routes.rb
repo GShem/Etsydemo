@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :orders
   devise_for :mode_lrails
   devise_for :users
   resources :listings
